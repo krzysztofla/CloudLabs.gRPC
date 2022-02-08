@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLabs.gRPC.API", "CloudLabs.gRPC.API.csproj", "{131A9467-1F99-487A-B737-E621B1E25110}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{131A9467-1F99-487A-B737-E621B1E25110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131A9467-1F99-487A-B737-E621B1E25110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131A9467-1F99-487A-B737-E621B1E25110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131A9467-1F99-487A-B737-E621B1E25110}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
