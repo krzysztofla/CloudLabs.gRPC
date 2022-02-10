@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "CloudLabs.gRPC.Client";
+
+package pricing;
+
+service PricingFeed {
+  rpc SubscribePricing (PricingRequest) returns (stream PricingResponse);
+}
+
+message PricingRequest {
+  string symbol = 1;
+}
+
+message PricingResponse {
+  string symbol = 1;
+  int32 value = 2;
+  int64 timestamp =3;
+}

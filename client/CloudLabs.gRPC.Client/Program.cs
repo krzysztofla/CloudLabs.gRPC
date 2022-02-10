@@ -1,13 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using CloudLabs.gRPC.API;
+
+using CloudLabs.gRPC.Client;
 using Grpc.Net.Client;
 
 Console.WriteLine("Hello, World!");
 
 using var channel = GrpcChannel.ForAddress("https://localhost:7179");
-var client = new Greeter.GreeterClient(channel);
+var client = new PricingFeed.PricingFeedClient(channel);
 
-var response = await client.SayHelloAsync(new HelloRequest() {Name = "Kris"});
+var pricingStream  = client.SubscribePricing(new PricingRequest() {Symbol = "USD"});
 
-Console.WriteLine(response);
+while (await pricingStream.ResponseStream.MoveNext(CancellationToken.None))
+{
+    var crt = pricingStream.ResponseStream.Current;
+    Console.WriteLine($"{crt.Value} - {crt.Symbol} - [{crt.Timestamp}]");    
+}
+
